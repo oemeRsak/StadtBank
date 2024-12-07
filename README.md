@@ -1,6 +1,5 @@
 # StadtBank
 
-[![Pylint](https://github.com/Kafalar-Karisik/StadtBank/actions/workflows/pylint.yml/badge.svg?branch=Django-Tailwind)](https://github.com/Kafalar-Karisik/StadtBank/actions/workflows/pylint.yml)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 [Documents](https://oemersak.me/StadtBank/)
