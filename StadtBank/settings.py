@@ -25,6 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_random_secret_key()  # I don't know what this thing do :)
+# And yes I know it is stupid everytime get a secret key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
