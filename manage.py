@@ -20,7 +20,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-datas = [('Actions/static/*', 'Actions/templates',
-          'Actions/static/404/*', 'Actions/static/templates/*'), ('db.sqlite3')]
