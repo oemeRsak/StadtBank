@@ -13,8 +13,6 @@ django.setup()
 
 from django.contrib.auth.models import Group, Permission, User
 
-from TOTP import newWorkerPassword
-
 if (passw := getpass("Enter new admin password: ")) != getpass("Confirm new password: "):
     print("Passwords does not match!")
     exit(-1)
@@ -22,8 +20,9 @@ if (passw := getpass("Enter new admin password: ")) != getpass("Confirm new pass
 User.objects.create_superuser(
     username="admin", email="", password=passw)
 
-User.objects.create_user("worker", "", "").save()
-print(newWorkerPassword(adminPass=passw))
+User.objects.create_user("worker", "", "".join(random.choices('1234567890',k=8))).save()
+
+print("\nUser account 'Worker' created. Please set a password in Admin Panel by reseting the password.")
 
 Group_L4 = Group.objects.create(name="Authorized-L4")
 Group_L4.permissions.add(
