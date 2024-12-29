@@ -1,6 +1,7 @@
 import os
 import sys
 
+import random
 from getpass import getpass
 
 import django
