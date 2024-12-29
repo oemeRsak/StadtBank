@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,12 +42,7 @@
 
       <div class="w-1/2 p-4">
         <!-- Name and Amount Inputs -->
-        <form
-          method="post"
-          action="{% url 'Bank:pay' %}"
-          id="Pay"
-          autocomplete="off"
-        >
+        <form method="post" action="{% url 'Bank:pay' %}" id="Pay" autocomplete="off">
           {% csrf_token %}
           <h3 class="text-2x1 mb-2 p-1 font-bold">{% trans "pay"%}</h3>
           <div class="mb-4">
@@ -58,12 +54,8 @@
               class="w-3/5 rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
               placeholder="Name/ID"
             />-->
-            <select
-              required
-              name="customer"
-              id="customer"
-              class="w-2/4 rounded-md border border-gray-300 bg-white p-2 focus:border-blue-500 focus:outline-none"
-            >
+            <select required name="customer" id="customer"
+              class="w-2/4 rounded-md border border-gray-300 bg-white p-2 focus:border-blue-500 focus:outline-none">
               <option selected disabled hidden>
                 {% trans "selectcustomer"%}
               </option>
@@ -76,15 +68,9 @@
             <!-- TODO: Add Name/User Check on write-->
           </div>
           <div class="mb-4">
-            <input
-              required
-              type="number"
-              id="payAmount"
-              name="payAmount"
+            <input required type="number" id="payAmount" name="payAmount"
               class="w-1/4 min-w-5 rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
-              placeholder="{% trans 'amount'%}"
-              min="1"
-            />
+              placeholder="{% trans 'amount'%}" min="1" />
             <input type="checkbox" id="isSalary" name="isSalary" />
             <label for="isSalary">{% trans "isSalary" %}</label>
             <input type="hidden" id="payType" name="payType" value="" />
@@ -94,17 +80,13 @@
           <div class="flex">
             <button
               class="mr-2 rounded-md bg-green-500 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring"
-              type="button"
-              id="payin"
-            >
+              type="button" id="payin">
               {% trans "payin"%}
             </button>
 
             <button
               class="rounded-md bg-red-500 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring"
-              type="button"
-              id="payout"
-            >
+              type="button" id="payout">
               {% trans "payout"%}
             </button>
           </div>
@@ -114,12 +96,7 @@
       <!-- Right Side -->
       <div class="w-1/2 p-4">
         <!-- Two Name Inputs and Amount Input -->
-        <form
-          method="post"
-          action="{% url 'Bank:transfer' %}"
-          autocomplete="off"
-          id="Transfer"
-        >
+        <form method="post" action="{% url 'Bank:transfer' %}" autocomplete="off" id="Transfer">
           {% csrf_token %}
           <h3 class="text-2x1 mb-2 p-1 font-bold">{% trans "transfer"%}</h3>
 
@@ -133,12 +110,8 @@
               placeholder="From"
             />
             -->
-            <select
-              required
-              name="nr"
-              id="nr"
-              class="w-2/4 rounded-md border border-gray-300 bg-white p-2 focus:border-blue-500 focus:outline-none"
-            >
+            <select required name="nr" id="nr"
+              class="w-2/4 rounded-md border border-gray-300 bg-white p-2 focus:border-blue-500 focus:outline-none">
               <option value="" selected disabled hidden>
                 {% trans "selectcustomer"%}
               </option>
@@ -159,12 +132,8 @@
               placeholder="To"
             />
             -->
-            <select
-              required
-              name="related"
-              id="related"
-              class="w-2/4 rounded-md border border-gray-300 bg-white p-2 focus:border-blue-500 focus:outline-none"
-            >
+            <select required name="related" id="related"
+              class="w-2/4 rounded-md border border-gray-300 bg-white p-2 focus:border-blue-500 focus:outline-none">
               <option value="" selected disabled hidden>
                 {% trans "selectcustomer"%}
               </option>
@@ -176,23 +145,15 @@
             </select>
           </div>
           <div class="mb-4">
-            <input
-              required
-              type="number"
-              id="transferAmount"
-              name="amount"
-              class="w-1/4 rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
-              min="1"
-              placeholder="{% trans 'amount'%}"
-            />
+            <input required type="number" id="transferAmount" name="amount"
+              class="w-1/4 rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none" min="1"
+              placeholder="{% trans 'amount'%}" />
           </div>
 
           <!-- Transfer Button -->
           <button
             class="rounded-md bg-blue-500 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring"
-            type="button"
-            id="transfer"
-          >
+            type="button" id="transfer">
             {% trans "transfer"%}
           </button>
           <input type="hidden" name="type" value="transfer" />
@@ -205,9 +166,9 @@
     </script>
     {% endif %}
     <script>
-          {% if user.is_authenticated %}
+      {% if user.is_authenticated %}
       var customers = [
-          {% for customer in customers %}{nr:{{ customer.nr }}, balance:{{customer.balance}}, name:"{{customer.name}}" },{%endfor%}
+        {% for customer in customers %}{ nr: { { customer.nr } }, balance: { { customer.balance } }, name: "{{customer.name}}" }, {% endfor %}
       ];
       {% endif %}
       /*
@@ -241,25 +202,27 @@
 
       const customer = document.getElementById("customer");
 
-      document.getElementById("payin").addEventListener("click", function() {document.getElementById("payType").value = "payin";
+      document.getElementById("payin").addEventListener("click", function () {
+        document.getElementById("payType").value = "payin";
         document.getElementById("Pay").submit();
-        }
+      }
       );
 
-      document.getElementById("payout").addEventListener("click", function() {
+      document.getElementById("payout").addEventListener("click", function () {
         amount.type = "number";
-          document.getElementById("payType").value = "payout";
-          document.getElementById("Pay").submit();
-        }
+        document.getElementById("payType").value = "payout";
+        document.getElementById("Pay").submit();
+      }
       );
 
       const nr = document.getElementById("nr");
       const related = document.getElementById("related");
-      document.getElementById("transfer").addEventListener("click", function() {
-          document.getElementById("Transfer").submit();
-          }
+      document.getElementById("transfer").addEventListener("click", function () {
+        document.getElementById("Transfer").submit();
+      }
       );
     </script>
     <script src="{% static 'index.js' %}"></script>
   </body>
+
 </html>

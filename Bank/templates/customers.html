@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,17 +43,10 @@
           <h3 class="mb-2 w-fit pr-3 text-lg font-bold">
             {% trans "customers"%}
           </h3>
-          <input
-            type="text"
-            class="search-input bg-whites rounded-sm"
-            id="customerSearchInput"
-            placeholder="{% trans 'search'%}"
-          />
+          <input type="text" class="search-input bg-whites rounded-sm" id="customerSearchInput"
+            placeholder="{% trans 'search'%}" />
         </div>
-        <table
-          id="customer-table"
-          class="w-full table-auto rounded border bg-white"
-        >
+        <table id="customer-table" class="w-full table-auto rounded border bg-white">
           <thead>
             <tr>
               <th class="border p-2">{% trans "id"%}</th>
@@ -83,18 +77,13 @@
           {% csrf_token %}
           <h3 class="text-2x1 m-2 p-1 font-bold">{% trans "newcustomer"%}</h3>
           <div class="m-4">
-            <input
-              type="text"
-              id="name"
-              name="name"
+            <input type="text" id="name" name="name"
               class="w-3/5 rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
-              placeholder="{% trans 'name'%}"
-            />
+              placeholder="{% trans 'name'%}" />
           </div>
           <div class="m-4">
             <button
-              class="rounded-md bg-green-500 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring"
-            >
+              class="rounded-md bg-green-500 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring">
               {% trans "create"%}
             </button>
           </div>
@@ -107,8 +96,7 @@
         <div class="m-4">
           <button
             class="rounded-md bg-green-500 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring"
-            onclick='document.location = "/login?next=/customers";'
-          >
+            onclick='document.location = "/login?next=/customers";'>
             {% trans "login"%}
           </button>
           {% endif %}
@@ -117,4 +105,5 @@
     </div>
     <script src="{% static 'index.js' %}"></script>
   </body>
+
 </html>

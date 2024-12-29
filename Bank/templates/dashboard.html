@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,17 +41,10 @@
           <h3 class="mb-2 w-fit pr-3 text-lg font-bold">
             {% trans "customers" %}
           </h3>
-          <input
-            type="text"
-            class="search-input bg-whites rounded-sm"
-            id="customerSearchInput"
-            placeholder="{% trans 'search'%}"
-          />
+          <input type="text" class="search-input bg-whites rounded-sm" id="customerSearchInput"
+            placeholder="{% trans 'search'%}" />
         </div>
-        <table
-          id="customer-table"
-          class="w-full table-auto rounded border bg-white"
-        >
+        <table id="customer-table" class="w-full table-auto rounded border bg-white">
           <thead>
             <tr>
               <th class="border p-2">{% trans "id"%}</th>
@@ -78,10 +72,7 @@
       <!-- Actions -->
       <div class="w-full p-4 md:w-1/2 lg:w-1/2 xl:w-1/2">
         <h3 class="mb-2 p-3 text-lg font-bold">{% trans "actions"%}</h3>
-        <table
-          id="actions-table"
-          class="w-full table-auto rounded border bg-white"
-        >
+        <table id="actions-table" class="w-full table-auto rounded border bg-white">
           <thead>
             <tr>
               <th class="border p-2">{% trans "actionID" %}</th>
@@ -96,29 +87,18 @@
             {% if actions %} {% for action in actions %}
             <tr>
               <td class="border p-2">{{action.id}}</td>
-              <td
-                class="group relative border p-2"
-                onclick="customerDet('{{action.customer.nr}}');"
-              >
+              <td class="group relative border p-2" onclick="customerDet('{{action.customer.nr}}');">
                 {{action.customer.name}}
-                <p
-                  class="p4 hidden opacity-0 transition-opacity group-hover:block group-hover:opacity-100"
-                >
+                <p class="p4 hidden opacity-0 transition-opacity group-hover:block group-hover:opacity-100">
                   {{action.customer.nr}}
                 </p>
               </td>
               <td class="border p-2">{{action.amount}}</td>
               <td class="border p-2">{{action.get_type_display }}</td>
-              <td
-                class="relatie group border p-2"
-                {% if action.related.nr %}
-                onclick="customerDet('{{action.related.nr}}');"
-                {% endif %}
-              >
+              <td class="relatie group border p-2" {% if action.related.nr %}
+                onclick="customerDet('{{action.related.nr}}');" {% endif %}>
                 {% if action.related %}{{action.related.name | default:""}}
-                <p
-                  class="p4 hidden opacity-0 transition-opacity group-hover:block group-hover:opacity-100"
-                >
+                <p class="p4 hidden opacity-0 transition-opacity group-hover:block group-hover:opacity-100">
                   {{action.related.nr}}
                 </p>
                 {% endif %}
@@ -136,4 +116,5 @@
     </div>
     <script src="{% static 'index.js' %}"></script>
   </body>
+
 </html>

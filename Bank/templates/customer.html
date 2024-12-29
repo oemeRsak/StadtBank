@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,13 +16,9 @@
 
       <div id="menuList" class="flex items-start">
         <a href="/" class="pl-3 text-gray-200">{% trans "dashboard" %}</a>
-        <a href="../customers" class="pl-3 text-gray-200"
-          >{% trans "customers"%}</a
-        >
+        <a href="../customers" class="pl-3 text-gray-200">{% trans "customers"%}</a>
         <a href="../pay" class="pl-3 text-gray-200">{% trans "pay"%}</a>
-        <a href="../creditManagment" class="pl-3 text-gray-200"
-          >{% trans "creditManagment"%}</a
-        >
+        <a href="../creditManagment" class="pl-3 text-gray-200">{% trans "creditManagment"%}</a>
       </div>
 
       <!-- Breadcrumb -->
@@ -72,17 +69,11 @@
               <td class="border p-2">{{action.id}}</td>
               <td class="border p-2">{{action.amount}}</td>
               <td class="border p-2">{{action.get_type_display}}</td>
-              <td
-                class="relatie group border p-2"
-                {% if action.related %}
-                onclick="customerDet('{{action.related.nr}}');"
-                {% endif %}
-              >
+              <td class="relatie group border p-2" {% if action.related %}
+                onclick="customerDet('{{action.related.nr}}');" {% endif %}>
                 {% if action.related %}
                 {{action.related.name|default_if_none:""}}
-                <p
-                  class="p4 hidden opacity-0 transition-opacity group-hover:block group-hover:opacity-100"
-                >
+                <p class="p4 hidden opacity-0 transition-opacity group-hover:block group-hover:opacity-100">
                   {{action.related.nr}}
                 </p>
                 {% endif %}
@@ -101,4 +92,5 @@
 
     <script src="{% static 'index.js' %}"></script>
   </body>
+
 </html>

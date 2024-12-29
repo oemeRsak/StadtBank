@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,29 +40,19 @@
       <!-- Left Side -->
       <div class="w-1/2 p-4">
         <!-- Name and Amount Inputs -->
-        <form
-          method="post"
-          action="{% url 'Bank:login' %}{% if next %}?next={{next}}{% endif %}"
-        >
+        <form method="post" action="{% url 'Bank:login' %}{% if next %}?next={{next}}{% endif %}">
           {% csrf_token %}
           <h3 class="text-2x1 mb-2 p-1 font-bold">{% trans "please" %}</h3>
           <div class="mb-4">
-            <input
-              type="password"
-              id="passw"
-              name="passw"
+            <input type="password" id="passw" name="passw"
               class="w-2/5 rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none"
-              placeholder="{% trans 'enterpassword' %}"
-              inputmode="numeric"
-              maxlength="5"
-            />
+              placeholder="{% trans 'enterpassword' %}" inputmode="numeric" maxlength="5" />
           </div>
 
           <div class="flex">
             <button
               class="mr-2 rounded-md bg-green-500 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring"
-              type="submit"
-            >
+              type="submit">
               {% trans "login" %}
             </button>
           </div>
@@ -70,4 +61,5 @@
     </div>
     <script src="{% static 'index.js' %}"></script>
   </body>
+
 </html>
