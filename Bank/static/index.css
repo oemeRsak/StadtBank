@@ -11,3 +11,64 @@ div#header {
 body {
   background-color: rgb(243, 244, 246);
 }
+
+.group {
+  position: relative; /* Required for positioning child tooltips */
+}
+
+.absolute {
+  position: absolute; /* Tooltip is positioned relative to parent */
+  z-index: 10; /* Ensure tooltip appears above other content */
+}
+
+.hidden {
+  display: none; /* Tooltip is hidden by default */
+}
+
+.group-hover\:block {
+  display: block; /* Show tooltip on hover */
+}
+
+.group-hover\:opacity-100 {
+  opacity: 1; /* Fade in tooltip */
+}
+
+.opacity-0 {
+  opacity: 0; /* Tooltip is invisible by default */
+}
+
+.transition-opacity {
+  transition: opacity 0.2s ease-in-out; /* Smooth fade effect */
+}
+
+.bg-gray-800 {
+  background-color: #2d3748; /* Dark background for contrast */
+}
+
+.text-white {
+  color: white; /* Light text for readability */
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.rounded {
+  border-radius: 0.25rem; /* Rounded corners */
+}
+
+.p-2 {
+  padding: 0.5rem; /* Padding inside tooltip */
+}
+
+.text-sm {
+  font-size: 0.875rem; /* Small, readable text */
+}
+
+.whitespace-nowrap {
+  white-space: nowrap; /* Prevent tooltip text from wrapping */
+}
+
+.mt-1 {
+  margin-top: 0.25rem; /* Small spacing between element and tooltip */
+}
