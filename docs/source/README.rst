@@ -1,12 +1,12 @@
 StadtBank
 =========
 
-.. |Pylint| image:: https://github.com/Kafalar-Karisik/StadtBank/actions/workflows/pylint.yml/badge.svg?branch=Django-Tailwind
-   :target: https://github.com/Kafalar-Karisik/StadtBank/actions/workflows/pylint.yml
+.. |Conventional Commits| image:: https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white
+   :target: https://conventionalcommits.org
 
-|Pylint|
+|Conventional Commits|
 
-`Documents <https://kafalar-karisik.github.io/StadtBank/>`_
+`Documents <https://oemersak.me/StadtBank/>`_
 
 Basic Bank System with Web GUI and database
 
