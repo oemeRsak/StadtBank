@@ -1,5 +1,5 @@
 # main packages
-Django==5.1.4
+Django==5.1.5
 django-debug-toolbar==4.4.6
 django-extensions==3.2.3
 Faker==28.4.1
