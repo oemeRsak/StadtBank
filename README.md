@@ -40,9 +40,9 @@ To set up the database, perform the following step:
 
 - Show up to migration files:
 
-  ```shell
-  python manage.py migrate
-  ```
+```shell
+python manage.py migrate
+```
 
 ## Data Samples
 
