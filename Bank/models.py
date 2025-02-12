@@ -48,7 +48,7 @@ class Action(models.Model):
 
 class Setting(models.Model):
     """Setting Class"""
-    # Setting.objects.get(key="hourSalary").value['value']
+    # Setting.objects.get(key="KEY").value['value']
     key = models.CharField(max_length=100, unique=True)
     value = models.JSONField()
 
