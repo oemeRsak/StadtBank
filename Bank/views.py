@@ -3,6 +3,7 @@ import logging
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group, Permission, User
 from django.http import (Http404, HttpResponse,  # HttpResponse,
                          HttpResponseRedirect)
 from django.shortcuts import get_object_or_404, redirect, render
@@ -244,6 +245,42 @@ class Login(View):
             return HttpResponseRedirect(request.GET["next"])
 
         return redirect('/')
+
+
+class FirstTimeSetup(View):
+    """First time setup Page"""
+
+    def get(self, request):
+        """FirstTimeSetup.get"""
+        return render(request, 'setup.html')
+
+    def post(self, request):
+        User.objects.create_superuser(
+            request.POST["adminwd"], None, request.POST["passwd"]).save()
+
+        worker = User.objects.create_user(
+            "worker", None, request.POST["workerpsw"])
+
+        worker.user_permissions.add(
+            *Permission.objects.filter(content_type__model='customer'))
+        worker.user_permissions.add(
+            *Permission.objects.filter(content_type__model='action'))
+        worker.user_permissions.add(
+            *Permission.objects.filter(content_type__model='credit'))
+
+        worker.save()
+
+        # Group_L4 = Group.objects.create(name="Authorized-L4")
+        # Group_L4.permissions.add(
+        #     *Permission.objects.filter(content_type__model='customer'))
+        # Group_L4.permissions.add(
+        #     *Permission.objects.filter(content_type__model='action'))
+        # Group_L4.permissions.add(
+        #     *Permission.objects.filter(content_type__model='credit'))
+        # User.objects.get(username="worker").groups.add(Group_L4)
+
+        Setting(key="SETUP_COMPLETED", value={'value': True}).save()
+        return redirect('Bank:index')
 
 
 @csrf_exempt

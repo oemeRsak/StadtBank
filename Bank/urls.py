@@ -15,5 +15,6 @@ urlpatterns = [
     path("creditManagment", views.CreditManagment.as_view(), name="Credit System"),
     path("credit", views.credit, name="credit"),
     path("login", views.Login.as_view(), name="login"),
+    path("setup", views.FirstTimeSetup.as_view(), name="setup"),
     path("newPass", views.newWorkerPass, name="newWorkerPass")
 ]

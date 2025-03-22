@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load i18n %} {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>Stadt Bank</title>
+  </head>
+
+  <body class="h-screen">
+    <!-- Breadcrumb and Header -->
+    <div id="header" class="flex items-center p-4">
+      <h1 class="text-3xl font-bold">StadtBank</h1>
+
+      <div id="menuList" class="flex items-start">
+        <a href="/" class="pl-3 text-gray-200 pointer-events-none">{% trans "dashboard" %}</a>
+        <a href="../customers" class="pl-3 text-gray-200 pointer-events-none">{% trans "customers"%}</a>
+        <a href="../pay" class="pl-3 text-gray-200 pointer-events-none">{% trans "pay"%}</a>
+        <a href="../creditManagment" class="pl-3 text-gray-200 pointer-events-none">{% trans "creditManagment"%}</a>
+      </div>
+
+      <!-- Breadcrumb -->
+      <nav class="ml-auto">
+        <ol class="flex list-none">
+          <li><a href="/" class="text-blue-200">{% trans "home"%}</a></li>
+          <li class="mx-2">/</li>
+          <li class="text-gray-200">{% trans "login"%}</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="container mx-auto mt-4">
+      <h2 class="mb-2 p-1 text-2xl font-bold">{% trans "login" %}</h2>
+    </div>
+
+    <!-- Body -->
+    <div class="container mx-auto mt-8 flex">
+      <!-- Left Side -->
+      <div class="w-1/2 p-4">
+        <!-- Name and Amount Inputs -->
+        <form method="post" action="/setup">
+          {% csrf_token %}
+          <div class="flex p-4">
+            <label for="adminwd" class="p-4">Admin name: </label>
+            <input type="text" name="adminwd" id="adminwd" placeholder="admin" value="admin" 
+              class="rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none">
+
+            <label for="passwd" class="p-4">Admin password: </label>
+            <input type="password" name="passwd" id="passwd" required
+            class="rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none">
+          </div>
+          <div class="flex p-4">
+            <label for="workerpsw" class="p-4">Worker password: </label>
+            <input type="password" name="workerpsw" id="workerpsw" required
+              class="rounded-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none">
+          </div>
+          <div class="flex p-4">
+            <button
+              class="mr-2 rounded-md bg-green-500 px-4 py-2 text-white focus:border-blue-300 focus:outline-none focus:ring"
+              type="submit">
+              Finish !
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="{% static 'index.js' %}"></script>
+  </body>
+
+</html>

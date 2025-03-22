@@ -64,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',  # DEBUG
     'django.middleware.locale.LocaleMiddleware',  # Multi Language
+    'Bank.extern.FirstTime.SetupMiddleware'  # First Time Setup
 ]
 
 DEBUG_TOOLBAR_PANELS = [
