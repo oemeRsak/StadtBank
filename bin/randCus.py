@@ -6,6 +6,8 @@ from random import randint
 import django
 from faker import Faker
 
+fake = Faker()
+
 
 def randCus(stop: int = 0):
     """Create Random Customer Data."""
@@ -18,7 +20,6 @@ def randCus(stop: int = 0):
 
 
 if __name__ == "__main__":
-    fake = Faker()
     sys.path.append(os.path.abspath(os.path.join(
         os.path.dirname(__file__), '..')))
     os.environ.setdefault('DJANGO_SETTINGS_MODULE',
