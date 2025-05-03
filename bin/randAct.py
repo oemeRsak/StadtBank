@@ -12,8 +12,16 @@ def randAct(stop: int = 0):
     """Create Random Action Data."""
     for _ in range(randint(20, 30) if stop == 0 else stop):
         action_type = randint(1, 3)
+
+        
+        CustomerCount = Customer.objects.count()
+        if CustomerCount == 0:
+            raise ValueError(
+                "No customers found. Please create customers first.")
+
+
         customer = Customer.objects.get(
-            nr=randint(1, Customer.objects.count()))
+            nr=randint(1, CustomerCount))
 
         if action_type == 1:
             Action(customer=customer, type="payin",
