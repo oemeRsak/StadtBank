@@ -1,7 +1,7 @@
 """bin/randCus.py"""
 import os
-import random
 import sys
+from random import randint
 
 import django
 from faker import Faker
@@ -9,10 +9,10 @@ from faker import Faker
 
 def randCus(stop: int = 0):
     """Create Random Customer Data."""
-    for _ in range(random.randint(25, 75) if stop == 0 else stop):
+    for _ in range(randint(20, 30) if stop == 0 else stop):
         first_name = fake.first_name()
         last_name = fake.last_name()
-        balance = random.randint(0, 100)
+        balance = randint(0, 100)
 
         Customer(name=f"{first_name} {last_name}", balance=balance).save()
 

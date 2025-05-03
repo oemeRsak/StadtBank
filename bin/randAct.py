@@ -1,6 +1,5 @@
 """bin/randAct.py"""
 import os
-import random
 import sys
 from datetime import datetime
 from random import randint
@@ -11,7 +10,7 @@ from faker import Faker
 
 def randAct(stop: int = 0):
     """Create Random Action Data."""
-    for _ in range(random.randint(20, 30) if stop == 0 else stop):
+    for _ in range(randint(20, 30) if stop == 0 else stop):
         action_type = randint(1, 3)
         customer = Customer.objects.get(
             nr=randint(1, Customer.objects.count()))
