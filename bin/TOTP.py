@@ -3,6 +3,7 @@ import time
 import getpass
 
 from django.http import HttpResponse, HttpResponseBadRequest
+import django.core.exceptions
 
 try:
     from django.contrib.auth.models import User
