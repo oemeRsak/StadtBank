@@ -12,8 +12,8 @@ import sys
 import django
 
 project = "StadtBank"
-copyright = "2024, Ömer Rasim Sak"
-author = "Ömer Rasim Sak"
+copyright = "2025, Ömer Rasim Sak"
+author = "Ömer R. Sak"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -38,7 +38,7 @@ html_theme = "sphinx_book_theme"
 # html_static_path = ["_static"]
 
 html_theme_options = {
-    "repository_url": "https://github.com/Kafalar-Karisik/StadtBank",
+    "repository_url": "https://github.com/oemeRsak/StadtBank",
     "repository_branch": "Django-Tailwind",
     "use_repository_button": True,
     "use_issues_button": False,
@@ -52,8 +52,8 @@ source_suffix = ".rst"
 # -- Open Graph Configuration ------------------------------------------------
 # https://sphinxext-opengraph.readthedocs.io/en/latest/
 
-ogp_site_url = "https://kafalar-karisik.github.io/StadtBank/"
-ogp_image = "https://opengraph.githubassets.com/6271a1f0466d012fbbf634faea54b21639eff616dbdd86109debc296a45803d8/Kafalar-Karisik/StadtBank"
+ogp_site_url = "https://oemeRsak.github.io/StadtBank/"
+ogp_image = "https://opengraph.githubassets.com/6271a1f0466d012fbbf634faea54b21639eff616dbdd86109debc296a45803d8/oemeRsak/StadtBank"
 # ogp_description_length = 300
 # ogp_type = "article"
 ogp_custom_meta_tags = [
