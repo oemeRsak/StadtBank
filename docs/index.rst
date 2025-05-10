@@ -16,7 +16,7 @@ StadtBank
 .. toctree::
    :maxdepth: 1
 
-   source/gitNotes.rst
+   source/Contributing.rst
 
 
 
