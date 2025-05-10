@@ -250,7 +250,7 @@ class Login(View):
 def newWorkerPass(request):
     """New Worker Password API"""
     if request.method == "POST":
-        logger.debug("Requested new Worker Password from '%s' (%s)",
+        logger.debug("Requested new Worker Password from IP '%s', User-Agent '%s'",
                      request.META['REMOTE_ADDR'], request.META['HTTP_USER_AGENT'])
         passw = TOTP.newWorkerPassword(
             request.POST['password'], httpRequest=True)
