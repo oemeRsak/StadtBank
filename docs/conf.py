@@ -39,7 +39,7 @@ html_theme = "sphinx_book_theme"
 
 html_theme_options = {
     "repository_url": "https://github.com/oemeRsak/StadtBank",
-    "repository_branch": "Django-Tailwind",
+    "repository_branch": "Development",
     "use_repository_button": True,
     "use_issues_button": False,
     "navigation_with_keys": False
