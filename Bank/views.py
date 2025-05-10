@@ -254,8 +254,7 @@ def newWorkerPass(request):
                      request.META['REMOTE_ADDR'], request.META['HTTP_USER_AGENT'])
         passw = TOTP.newWorkerPassword(
             request.POST['password'], httpRequest=True)
-        return HttpResponse(passw, status=passw.status_code
-                            if hasattr(locals()['passw'], 'status_code') else 200)
+        return HttpResponse(passw, status=200)
         # passw.status_code if 'passw.status_code' in locals() else 200)
     logger.critical("FALSE request for new Worker Password from '%s' (%s)",
                     request.META['REMOTE_ADDR'], request.META['HTTP_USER_AGENT'])
