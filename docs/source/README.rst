@@ -1,14 +1,13 @@
 StadtBank
 =========
 
-.. |Conventional Commits| image:: https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white
+.. image:: https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white
    :target: https://conventionalcommits.org
-
-|Conventional Commits|
+   :alt: Conventional Commits
 
 `Documents <https://oemersak.me/StadtBank/>`_
 
-Basic Bank System with Web GUI and database
+Basic Bank System with Web GUI and database.
 
 Setup
 -----
@@ -18,28 +17,26 @@ Create Environment (Optional)
 
 To create a virtual environment, run the following command:
 
-.. code-block:: shell
-
-   python -m venv .venv
-
 Activate virtual environment (for Unix-based systems)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: shell
 
+   python -m venv .venv
    source .venv/bin/activate
 
 Activate virtual environment (for Windows)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: powershell
+.. code-block:: shell
 
+   python -m venv .venv
    .venv\scripts\activate
 
 Install Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
-Install the required Python Modules
+Install the required Python Modules:
 
 .. code-block:: shell
 
@@ -50,18 +47,16 @@ Create Database
 
 To set up the database, perform the following step:
 
--  Apply migration files:
+- Show up to migration files:
 
-   .. code-block:: shell
+.. code-block:: shell
 
-      python manage.py migrate
+   python manage.py migrate
 
 Data Samples
 ------------
 
-You can use the `bin/randCus.py <bin/randCus.py>`__ and
-`bin/randAct.py <bin/randAct.py>`__ for generating sample data for your
-database.
+You can use the `bin/randCus.py <bin/randCus.py>`_ and `bin/randAct.py <bin/randAct.py>`_ for generating sample data for your database.
 
 Running Server
 --------------
@@ -73,35 +68,30 @@ After all setup, you can run the program with:
    python manage.py runserver
 
 .. note::
-
-   Use ``--insecure`` if you can’t get Static Files
+   Use ``--insecure`` if you can't get Static Files.
 
 Admin GUI
 ---------
 
-To access the admin GUI, you need to create a superuser account first.
-Run the following command:
+To access the admin GUI, you need to create a superuser account first. Run the following command:
 
 .. code-block:: shell
 
    python manage.py createsuperuser
 
 .. note::
+   Or you can run `bin/userSetup.py <bin/userSetup.py>`_ for Account Setup.
 
-   Alternatively, you can run `bin/userSetup.py <bin/userSetup.py>`__ for account setup
+For access, go to ``http://IP_ADDRESS/admin``
 
-For access, you need to go to ``http://IP_ADDRESS/admin``
-
-.. note::
-
+.. warning::
    Please ensure that your database migrations are applied before running the ``createsuperuser`` command.
 
 Compile Languages
 -----------------
 
-StadtBank has a multi-language system. You can find the translations in
-`Bank/locale <Bank/locale/>`__. You need to compile them to see
-the translations.
+StadtBank has a multi-language system. You can find the translations in `Bank/locale <Bank/locale/>`_.
+You need to compile them to see translations:
 
 .. code-block:: shell
 
@@ -113,8 +103,7 @@ Improve or add Translations
 Improve Translations
 ^^^^^^^^^^^^^^^^^^^^
 
-You can change the ``msgstr`` in the ``*.po`` files. Every text has a
-``msgid``, and above them, you can see where they are used.
+You can change the ``msgstr`` in the ``*.po`` files. Every text has a ``msgid`` and you can see where it is used above it.
 
 Add Translations
 ^^^^^^^^^^^^^^^^
@@ -126,7 +115,8 @@ Add Translations
 HTTPS Server
 ------------
 
-It is still in development. I’m not very good with it. Up to now, I have only done what I found on the internet for it. You can find the links in settings.py.
+It is still in development. I'm not very good with it. Up to now I only did what I found on the internet for it.
+You can find the links in `settings.py`.
 
 Create Certificates
 ~~~~~~~~~~~~~~~~~~~
@@ -137,11 +127,10 @@ You can run this command:
 
    openssl req -x509 -newkey rsa:4096 -keyout certs/server.key -out certs/server.pem -days 365 -nodes
 
-Alternatively, you can use the `certs/file.sh <certs/file.sh>`__ for CA certificates.
+Or you can use `certs/file.sh <certs/file.sh>`_ for CA certificate.
 
-.. note::
-
-   CHECK THE CONFIGURATION IN `certs/file.sh <certs/file.sh>`__ BEFORE RUNNING IT!!!
+.. warning::
+   CHECK THE CONFIGURATION IN `certs/file.sh <certs/file.sh>`_ BEFORE RUN IT !!!
 
 Run Server
 ~~~~~~~~~~
