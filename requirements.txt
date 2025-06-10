@@ -3,7 +3,7 @@ Django==5.2
 django-debug-toolbar==4.4.6
 django-extensions==3.2.3
 Faker==28.4.1
-requests==2.32.3
+requests==2.32.4
 Sphinx==8.0.2
 sphinx-autobuild==2024.9.3
 sphinxcontrib-django==2.5
