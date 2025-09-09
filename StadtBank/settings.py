@@ -28,7 +28,7 @@ SECRET_KEY = get_random_secret_key()  # I don't know what this thing do :)
 # And yes I know it is stupid everytime get a secret key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
