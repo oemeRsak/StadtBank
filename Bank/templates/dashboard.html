@@ -96,15 +96,17 @@
               </td>
               <td class="border p-2">{{action.amount}}</td>
               <td class="border p-2">{{action.get_type_display }}</td>
-                  class="absolute left-1/2 -translate-x-1/2 top-full mt-1 hidden whitespace-nowrap rounded bg-gray-800 p-2 text-sm text-white shadow-lg opacity-0 transition-opacity group-hover:block group-hover:opacity-100">
-                <span
+              {% if action.related %}
+              <td class="group relative border p-2" onclick="customerDet('{{action.related.nr}}');">
                 {{action.related.name}}
-                {% if action.related%}
-              <td class="group relative border p-2"{% if action.related %} onclick="customerDet('{{action.related.nr}}');" {% endif %}>
+                <span
+                  class="absolute left-1/2 -translate-x-1/2 top-full mt-1 hidden whitespace-nowrap rounded bg-gray-800 p-2 text-sm text-white shadow-lg opacity-0 transition-opacity group-hover:block group-hover:opacity-100">
                   {{action.related.nr}}
                 </span>
-                {% endif %}
               </td>
+              {% else %}
+              <td class="border p-2"></td>
+              {% endif %}
               <td class="border p-2">{{action.date| date:"l (j.m)"}}</td>
             </tr>
             {% endfor %} {% else %}
