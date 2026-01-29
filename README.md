@@ -1,8 +1,8 @@
 # StadtBank
 
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+# This project has moved to the ![OpenStadtBank](https://github.com/oemeRsak/OpenStadtBank) repository for a Free Software competition.
 
-[Documents](https://oemersak.me/StadtBank/)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 Basic Bank System with Web GUI and database
 
